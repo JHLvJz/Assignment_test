@@ -18,8 +18,9 @@ export const Top = styled.div`
   margin: 0px auto;
   width: 90%;
   height: 30px;
-
-  padding: 8px;
+  top: 5px;
+  padding: 5px;
+  margin-top: 10px;
 
   display: flex;
   flex-direction: row;
@@ -52,11 +53,11 @@ export const Button = styled.div`
   width: 90%;
   height: 70px;
   border-radius: 20px;
-  background-color: blue;
+  background-color: rgb(34, 36, 41);
 
   color: rgb(109, 112, 115);
-  font-weight: 500;
-  font-size: 1.3rem;
+  font-weight: 400;
+  font-size: 1.2rem;
   line-height: 70px;
   text-align: center;
 `;

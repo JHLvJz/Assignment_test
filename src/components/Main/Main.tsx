@@ -2,7 +2,7 @@ import * as React from "react";
 import { Container, Button, Top, TopFont, TopIcon } from "@/styles/index/style";
 import { AiOutlineSetting } from "react-icons/ai";
 
-import Swap from "./Swap";
+import Swap from "../Swap/Swap";
 
 function Main() {
   const handleSetting = () => {
