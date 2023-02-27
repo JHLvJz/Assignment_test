@@ -17,8 +17,9 @@ export const Container = styled.div`
 export const Top = styled.div`
   margin: 0px auto;
   width: 90%;
-  padding: 8px;
   height: 30px;
+
+  padding: 8px;
 
   display: flex;
   flex-direction: row;

@@ -5,11 +5,20 @@ import { AiOutlineSetting } from "react-icons/ai";
 import Swap from "./Swap";
 
 function Main() {
+  const handleSetting = () => {
+    alert("준비 중입니다.");
+  };
+
   return (
     <Container>
       <Top>
         <TopFont>스왑</TopFont>
-        <AiOutlineSetting size="21" color="white" className="icon" />
+        <AiOutlineSetting
+          size="21"
+          color="white"
+          className="icon"
+          onClick={handleSetting}
+        />
       </Top>
       <Swap />
       <Swap />
