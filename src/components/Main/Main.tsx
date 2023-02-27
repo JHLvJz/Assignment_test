@@ -1,6 +1,6 @@
 import * as React from "react";
-import { Container, Button, Top, TopFont, TopIcon } from "@/styles/index/style";
-import { AiOutlineSetting } from "react-icons/ai";
+import * as S from "@/styles/index/style";
+import { AiOutlineSetting, AiOutlineArrowDown } from "react-icons/ai";
 
 import Swap from "../Swap/Swap";
 
@@ -10,20 +10,23 @@ function Main() {
   };
 
   return (
-    <Container>
-      <Top>
-        <TopFont>스왑</TopFont>
+    <S.Container>
+      <S.Top>
+        <S.TopFont>스왑</S.TopFont>
         <AiOutlineSetting
           size="21"
           color="white"
           className="icon"
           onClick={handleSetting}
         />
-      </Top>
+      </S.Top>
       <Swap />
+      <S.ArrowBox>
+        <AiOutlineArrowDown size="18" color="white" className="Arrowicon" />
+      </S.ArrowBox>
       <Swap />
-      <Button>금액을 입력하세요.</Button>
-    </Container>
+      <S.Button>금액을 입력하세요.</S.Button>
+    </S.Container>
   );
 }
 

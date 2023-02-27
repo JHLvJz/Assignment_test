@@ -49,7 +49,7 @@ export const TopIcon = styled.div`
 
 export const Button = styled.div`
   margin: 0px auto;
-  margin-bottom: 10px;
+  margin-top: 10px;
   width: 90%;
   height: 70px;
   border-radius: 20px;
@@ -60,4 +60,23 @@ export const Button = styled.div`
   font-size: 1.2rem;
   line-height: 70px;
   text-align: center;
+`;
+
+export const ArrowBox = styled.div`
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  border: 5px solid rgb(24, 27, 31);
+  border-radius: 10px;
+  background-color: rgb(34, 36, 41);
+  width: 25px;
+  height: 25px;
+  z-index: 10;
+
+  .Arrowicon {
+    position: absolute;
+    padding: 0.2rem;
+  }
 `;

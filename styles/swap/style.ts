@@ -3,11 +3,14 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: relative;
   margin: 0px auto;
-  margin-bottom: 10px;
+  margin-top: 2px;
+  margin-bottom: 7px;
   width: 90%;
   height: 90px;
   border-radius: 20px;
   background-color: rgb(34, 36, 41);
+
+  z-index: 1;
 `;
 
 export const TokenButton = styled.div`
