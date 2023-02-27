@@ -6,6 +6,9 @@ const HtmlWebpackPlugin = require("html-webpack-plugin"); //추가
 module.exports = {
   entry: "./src/index.tsx",
   resolve: {
+    alias: {
+      "@": path.resolve(__dirname),
+    },
     extensions: [".ts", ".tsx", ".js"],
   },
   output: {

@@ -1,11 +1,12 @@
 import * as React from "react";
-import { Box } from "../styles/index/style";
+import { Wrapper } from "../styles/index/style";
+import Main from "./components/Main/Main";
 
 function App() {
   return (
-    <Box>
-      <div>얍</div>
-    </Box>
+    <Wrapper>
+      <Main />
+    </Wrapper>
   );
 }
 
