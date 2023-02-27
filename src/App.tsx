@@ -1,12 +1,15 @@
 import * as React from "react";
+import { RecoilRoot } from "recoil";
 import { Wrapper } from "../styles/index/style";
 import Main from "./components/Main/Main";
 
 function App() {
   return (
-    <Wrapper>
-      <Main />
-    </Wrapper>
+    <RecoilRoot>
+      <Wrapper>
+        <Main />
+      </Wrapper>
+    </RecoilRoot>
   );
 }
 
