@@ -7,12 +7,12 @@ export const IsInputBlankState = atom<boolean>({
 
 export const SelectedTokenState1 = atom<string>({
   key: "SelectedTokenState1",
-  default: "",
+  default: "DAI",
 });
 
 export const SelectedTokenState2 = atom<string>({
   key: "SelectedTokenState2",
-  default: "",
+  default: "USDC",
 });
 
 export const WhichSwapSate = atom<number>({
