@@ -1,17 +1,21 @@
 import * as React from "react";
 import * as S from "@/styles/modal/style";
 import styled from "styled-components";
+import SearchInput from "./SearchInput";
+import { TopFont } from "@/styles/index/style";
 
 function Modal({ IsModalOpen, close }) {
   return (
     <S.ModalContainer IsModalOpen={IsModalOpen}>
       {IsModalOpen ? (
-        <S.ModalBack onClick={close}>
+        <>
+          <S.ModalBack onClick={close}></S.ModalBack>
           <S.ModalView>
-            <button onClick={close}>X</button>
-            <div>제발 이해</div>
+            <SearchInput close={close} />
+            <S.Middle />
+            <S.Footer />
           </S.ModalView>
-        </S.ModalBack>
+        </>
       ) : null}
     </S.ModalContainer>
   );

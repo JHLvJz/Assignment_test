@@ -24,6 +24,7 @@ export const ModalBack = styled.div`
   height: 450px;
 
   position: absolute;
+  z-index: 5;
   top: 0px;
   left: 0%;
 
@@ -37,8 +38,32 @@ export const ModalBack = styled.div`
 export const ModalView = styled.div`
   text-align: center;
   text-decoration: none;
-  padding: 185px 130px;
-  background-color: white;
-  border-radius: 30px;
+  width: 60%;
+  height: 420px;
+  background-color: rgb(25, 27, 31);
+  border-radius: 10px;
   color: black;
+
+  position: relative;
+  z-index: 10;
+`;
+
+export const Header = styled.div`
+  width: 100%;
+  height: 20%;
+
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+`;
+
+export const Middle = styled.div`
+  width: 100%;
+  height: 65%;
+  background-color: red;
+`;
+
+export const Footer = styled.div`
+  width: 100%;
+  height: 10%;
+  background-color: beige;
 `;

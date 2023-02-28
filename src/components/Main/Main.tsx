@@ -20,6 +20,7 @@ function Main() {
 
   const CloseModal = () => {
     SetModalOpen(false);
+    console.log("얍 ----");
   };
 
   const AlertPreparing = () => {
