@@ -44,4 +44,8 @@ export const TokenItem = styled.div`
   align-items: center;
   padding-left: 5%;
   box-sizing: border-box;
+
+  &:hover {
+    background-color: rgb(45, 47, 53);
+  }
 `;
