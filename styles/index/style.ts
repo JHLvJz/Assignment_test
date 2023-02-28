@@ -25,6 +25,7 @@ export const Top = styled.div`
   display: flex;
   flex-direction: row;
   position: relative;
+  z-index: 5;
 
   .icon {
     position: absolute;
@@ -47,7 +48,7 @@ export const TopIcon = styled.div`
   left: 5%;
 `;
 
-export const Button = styled.div`
+export const BlankButton = styled.div`
   margin: 0px auto;
   margin-top: 10px;
   width: 90%;
@@ -60,6 +61,23 @@ export const Button = styled.div`
   font-size: 1.2rem;
   line-height: 70px;
   text-align: center;
+`;
+
+export const SwapButton = styled.div`
+  margin: 0px auto;
+  margin-top: 10px;
+  width: 90%;
+  height: 70px;
+  border-radius: 20px;
+  background-color: rgb(58, 112, 221);
+
+  color: white;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 70px;
+  text-align: center;
+  position: relative;
+  z-index: 5;
 `;
 
 export const ArrowBox = styled.div`

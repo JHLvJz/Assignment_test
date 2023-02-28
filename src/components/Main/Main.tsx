@@ -22,7 +22,7 @@ function Main() {
     SetModalOpen(false);
   };
 
-  const handleSetting = () => {
+  const AlertPreparing = () => {
     alert("준비 중입니다.");
   };
 
@@ -36,7 +36,7 @@ function Main() {
           size="21"
           color="white"
           className="icon"
-          onClick={handleSetting}
+          onClick={AlertPreparing}
         />
       </S.Top>
       <Swap OpenModal={OpenModal} />
@@ -44,7 +44,11 @@ function Main() {
         <AiOutlineArrowDown size="18" color="white" className="Arrowicon" />
       </S.ArrowBox>
       <Swap OpenModal={OpenModal} />
-      {IsInputBlank && <S.Button>금액을 입력하세요.</S.Button>}
+      {IsInputBlank ? (
+        <S.BlankButton>금액을 입력하세요.</S.BlankButton>
+      ) : (
+        <S.SwapButton onClick={AlertPreparing}>스왑</S.SwapButton>
+      )}
       <Modal IsModalOpen={IsModalOpen} close={CloseModal} />
     </S.Container>
   );
