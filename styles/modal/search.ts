@@ -22,7 +22,7 @@ export const TopFont = styled.div<FontProps>`
 
 export const InputBox = styled.input`
   width: 90%;
-  height: 35%;
+  height: 25%;
   background-color: rgb(25, 27, 31);
   border: 1px solid rgb(58, 111, 220);
   border-radius: 10px;
@@ -30,4 +30,18 @@ export const InputBox = styled.input`
   margin-top: 10%;
   padding: 1% 3% 1% 3%;
   color: rgb(180, 186, 206);
+`;
+
+export const TokenItem = styled.div`
+  width: 100%;
+  height: 20%;
+
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  box-sizing: border-box;
 `;

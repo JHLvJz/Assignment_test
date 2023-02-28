@@ -5,7 +5,8 @@ import { Header } from "@/styles/modal/style";
 
 function SearchInput({ close }) {
   const [text, setText] = useState<string>("");
-  console.log(`${process.env.Mesher_API_SERVER_URL}jihoo`);
+  //   console.log(`${process.env.Mesher_API_SERVER_URL}jihoo`);
+
   const onChange = (e) => {
     const { value } = e.target;
     setText(value);

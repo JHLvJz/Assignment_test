@@ -50,7 +50,11 @@ function Main() {
       ) : (
         <S.SwapButton onClick={AlertPreparing}>스왑</S.SwapButton>
       )}
-      <Modal IsModalOpen={IsModalOpen} close={CloseModal} />
+      <Modal
+        IsModalOpen={IsModalOpen}
+        close={CloseModal}
+        AlertPreparing={AlertPreparing}
+      />
     </S.Container>
   );
 }
