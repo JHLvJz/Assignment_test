@@ -4,6 +4,10 @@ interface FontProps {
   fontsize: string;
 }
 
+interface TokenProps {
+  isSelected: boolean;
+}
+
 export const Top = styled.div`
   position: relative;
   display: flex;
@@ -32,7 +36,7 @@ export const InputBox = styled.input`
   color: rgb(180, 186, 206);
 `;
 
-export const TokenItem = styled.div`
+export const TokenItem = styled.div<TokenProps>`
   width: 100%;
   height: 20%;
 
@@ -44,6 +48,8 @@ export const TokenItem = styled.div`
   align-items: center;
   padding-left: 5%;
   box-sizing: border-box;
+  background-color: ${(props) =>
+    props.isSelected == true ? "rgb(45, 47, 53)" : "rgb(25, 27, 31)"};
 
   &:hover {
     background-color: rgb(45, 47, 53);

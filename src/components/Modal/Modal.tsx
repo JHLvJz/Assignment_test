@@ -4,10 +4,12 @@ import styled from "styled-components";
 import Search from "./Search";
 import { TopFont } from "@/styles/index/style";
 import { useRecoilState } from "recoil";
-import { WhichSwapSate } from "@/src/atom";
+import { SelectedTokenState1, WhichSwapSate } from "@/src/atom";
 
 function Modal({ IsModalOpen, close, AlertPreparing }) {
   const [swapIndex, setSwapIndex] = useRecoilState<number>(WhichSwapSate);
+  const [token1, setToken1] = useRecoilState<string>(SelectedTokenState1);
+  console.log(token1, "안정해져있니?");
 
   console.log(swapIndex, "~~제발");
   return (

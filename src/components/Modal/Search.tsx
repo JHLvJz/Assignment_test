@@ -4,6 +4,7 @@ import * as S from "@/styles/modal/search";
 import { Header, Middle } from "@/styles/modal/style";
 import { useRecoilState } from "recoil";
 import { SelectedTokenState1, SelectedTokenState2 } from "@/src/atom";
+import SearchItem from "./SearchItem";
 
 function Search({ close, swapIndex }) {
   const [text, setText] = useState<string>("");
@@ -14,7 +15,7 @@ function Search({ close, swapIndex }) {
     setText(value);
   };
   //   console.log(`${process.env.Mesher_API_SERVER_URL}jihoo`);
-
+  const temp = window["token" + swapIndex];
   const TokenList: string[] = [
     "ETH",
     "USDT",
@@ -58,15 +59,13 @@ function Search({ close, swapIndex }) {
         />
       </Header>
       <Middle>
-        {filterResult.map((token, index) => (
-          <S.TokenItem
+        {filterResult.map((tokenItem, index) => (
+          <SearchItem
+            onClick={tokenClick}
             key={index}
-            onClick={() => {
-              tokenClick(token);
-            }}
-          >
-            {token}
-          </S.TokenItem>
+            swapIndex={swapIndex}
+            name={tokenItem}
+          />
         ))}
       </Middle>
     </>
