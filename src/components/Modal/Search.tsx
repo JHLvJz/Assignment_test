@@ -38,7 +38,12 @@ function Search({ close }) {
             X
           </S.TopFont>
         </S.Top>
-        <S.InputBox onChange={onChange} type="text" value={text} />
+        <S.InputBox
+          onChange={onChange}
+          type="text"
+          value={text}
+          placeholder="이름 검색 또는 주소 붙여넣기"
+        />
       </Header>
       <Middle>
         {filterResult.map((token, index) => (

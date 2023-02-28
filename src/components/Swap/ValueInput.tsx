@@ -26,7 +26,7 @@ function ValueInput() {
 
   return (
     <div>
-      <S.InputBox onChange={onChange} value={text} />
+      <S.InputBox onChange={onChange} value={text} placeholder="0.0" />
     </div>
   );
 }
