@@ -29,6 +29,7 @@ export const TokenButton = styled.div`
   background-color: rgba(45, 47, 52);
 
   cursor: pointer;
+  z-index: 5;
 
   .ArrowIcon {
     padding: 7px 2px 7px 2px;

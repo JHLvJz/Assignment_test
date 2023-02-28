@@ -10,7 +10,10 @@ function ValueInput() {
     useRecoilState<boolean>(IsInputBlankState);
 
   const onChange = (e) => {
-    setText(e.target.value);
+    const { value } = e.target;
+    let FilteredInput = value.replace(/[^0-9, ^.]/g, "");
+
+    setText(FilteredInput);
   };
 
   useEffect(() => {
@@ -18,10 +21,15 @@ function ValueInput() {
       SetIsInputBlank(false);
     } else {
       SetIsInputBlank(true);
+      setText("0.0");
     }
   }, [text]);
 
-  return <S.InputBox onChange={onChange} />;
+  return (
+    <div>
+      <S.InputBox onChange={onChange} value={text} />
+    </div>
+  );
 }
 
 export default ValueInput;

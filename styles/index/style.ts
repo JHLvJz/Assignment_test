@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
+  position: relative;
   width: 100%;
   height: 400px;
   border-radius: 20px;
@@ -20,7 +21,6 @@ export const Top = styled.div`
   height: 30px;
   top: 5px;
   padding: 5px;
-  margin-top: 10px;
 
   display: flex;
   flex-direction: row;
@@ -64,7 +64,7 @@ export const Button = styled.div`
 
 export const ArrowBox = styled.div`
   position: absolute;
-  top: 18%;
+  top: 120px;
   left: 50%;
   transform: translateX(-50%);
 
