@@ -16,10 +16,6 @@ function SearchList() {
     "ENS",
   ];
 
-  const filterResult = TokenList.filter((p) => {
-    return p.toLocaleLowerCase().includes(text.toLocaleLowerCase());
-  });
-
   return (
     <Middle>
       <S.TokenItem>ETC</S.TokenItem>
