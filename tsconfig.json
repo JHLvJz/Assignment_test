@@ -8,12 +8,15 @@
     "lib": ["es2015", "es2017", "dom"],
     "removeComments": true,
     "allowSyntheticDefaultImports": false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "jsx": "react",
     "allowJs": true,
     "baseUrl": "./",
     "paths": {
       "@/*": ["./*"]
-    }
+    },
+    "strict": true
   }
   // "include": ["src"]
 }

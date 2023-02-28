@@ -3,11 +3,12 @@ import { useState } from "react";
 import * as S from "@/styles/modal/search";
 import { Header, Middle } from "@/styles/modal/style";
 import { useRecoilState } from "recoil";
-import { SelectedTokenState } from "@/src/atom";
+import { SelectedTokenState1, SelectedTokenState2 } from "@/src/atom";
 
-function Search({ close }) {
+function Search({ close, swapIndex }) {
   const [text, setText] = useState<string>("");
-  const [token, setToken] = useRecoilState<string>(SelectedTokenState);
+  const [token1, setToken1] = useRecoilState<string>(SelectedTokenState1);
+  const [token2, setToken2] = useRecoilState<string>(SelectedTokenState2);
   const onChange = (e) => {
     const { value } = e.target;
     setText(value);
@@ -32,7 +33,11 @@ function Search({ close }) {
   });
 
   const tokenClick = (e: string) => {
-    setToken(e);
+    if (swapIndex == 1) {
+      setToken1(e);
+    } else {
+      setToken2(e);
+    }
     close();
   };
 

@@ -13,14 +13,12 @@ function Main() {
     useRecoilState<boolean>(IsInputBlankState);
   const [IsModalOpen, SetModalOpen] = useState<boolean>(false);
 
-  const OpenModal = () => {
+  const OpenModal = (idenfier: number) => {
     SetModalOpen(true);
-    console.log(IsModalOpen, "-~~-");
   };
 
   const CloseModal = () => {
     SetModalOpen(false);
-    console.log("얍 ----");
   };
 
   const AlertPreparing = () => {
@@ -40,11 +38,11 @@ function Main() {
           onClick={AlertPreparing}
         />
       </S.Top>
-      <Swap OpenModal={OpenModal} />
+      <Swap SwapIndex="1" OpenModal={OpenModal} />
       <S.ArrowBox>
         <AiOutlineArrowDown size="18" color="white" className="Arrowicon" />
       </S.ArrowBox>
-      <Swap OpenModal={OpenModal} />
+      <Swap SwapIndex="2" OpenModal={OpenModal} />
       {IsInputBlank ? (
         <S.BlankButton>금액을 입력하세요.</S.BlankButton>
       ) : (
