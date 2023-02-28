@@ -2,6 +2,8 @@ const path = require("path");
 
 const { CleanWebpackPlugin } = require("clean-webpack-plugin"); //추가
 const HtmlWebpackPlugin = require("html-webpack-plugin"); //추가
+const webpack = require("webpack");
+const dotenv = require("dotenv");
 
 module.exports = {
   entry: "./src/index.tsx",
@@ -29,6 +31,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       //index.html 자동 생성되도록 template 옵션 설정
       template: "./src/index.html",
+    }),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(dotenv.config().parsed),
     }),
   ],
 };
