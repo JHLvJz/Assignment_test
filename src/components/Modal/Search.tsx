@@ -2,9 +2,12 @@ import * as React from "react";
 import { useState } from "react";
 import * as S from "@/styles/modal/search";
 import { Header, Middle } from "@/styles/modal/style";
+import { useRecoilState } from "recoil";
+import { SelectedTokenState } from "@/src/atom";
 
 function Search({ close }) {
   const [text, setText] = useState<string>("");
+  const [token, setToken] = useRecoilState<string>(SelectedTokenState);
   const onChange = (e) => {
     const { value } = e.target;
     setText(value);
@@ -26,8 +29,12 @@ function Search({ close }) {
 
   const filterResult = TokenList.filter((p) => {
     return p.toLocaleLowerCase().includes(text.toLocaleLowerCase());
-    console.log("검색필터 잘 되나?");
   });
+
+  const tokenClick = (e: string) => {
+    setToken(e);
+    close();
+  };
 
   return (
     <>
@@ -47,7 +54,14 @@ function Search({ close }) {
       </Header>
       <Middle>
         {filterResult.map((token, index) => (
-          <S.TokenItem key={index}>{token}</S.TokenItem>
+          <S.TokenItem
+            key={index}
+            onClick={() => {
+              tokenClick(token);
+            }}
+          >
+            {token}
+          </S.TokenItem>
         ))}
       </Middle>
     </>
