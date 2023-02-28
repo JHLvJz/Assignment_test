@@ -10,7 +10,7 @@ export const Container = styled.div`
   border-radius: 20px;
   background-color: rgb(34, 36, 41);
 
-  z-index: 1;
+  z-index: 5;
 `;
 
 export const TokenButton = styled.div`

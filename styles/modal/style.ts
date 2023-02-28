@@ -1,22 +1,17 @@
 import styled from "styled-components";
 
-export const ModalContainer = styled.div`
-  /* top: 50px;
-  background-color: rgba(0, 0, 0, 0.6);
+interface MyStyledProps {
+  IsModalOpen: boolean;
+}
 
-  width: 400px;
-  height: 400px;
-
-  background-color: red; */
-
+export const ModalContainer = styled.div<MyStyledProps>`
   position: absolute;
-  z-index: 20;
+  z-index: ${(props) => (props.IsModalOpen ? 20 : 1)};
 
   width: 100%;
-  height: 400px;
+  height: 450px;
   margin: 0px auto;
   top: 0%;
-  left: 0%;
 
   display: flex;
   flex-flow: row wrep;
@@ -26,7 +21,7 @@ export const ModalContainer = styled.div`
 
 export const ModalBack = styled.div`
   width: 100%;
-  height: 400px;
+  height: 450px;
 
   position: absolute;
   top: 0px;
@@ -36,14 +31,14 @@ export const ModalBack = styled.div`
   flex-flow: row wrep;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
 `;
 
 export const ModalView = styled.div`
   text-align: center;
   text-decoration: none;
-  padding: 30px 90px;
+  padding: 185px 130px;
   background-color: white;
   border-radius: 30px;
-  color: #400c7;
+  color: black;
 `;

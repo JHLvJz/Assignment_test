@@ -21,7 +21,6 @@ function ValueInput() {
       SetIsInputBlank(false);
     } else {
       SetIsInputBlank(true);
-      setText("0.0");
     }
   }, [text]);
 

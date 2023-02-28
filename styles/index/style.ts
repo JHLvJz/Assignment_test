@@ -10,7 +10,7 @@ export const Wrapper = styled.div`
 export const Container = styled.div`
   position: relative;
   width: 100%;
-  height: 400px;
+  height: 450px;
   border-radius: 20px;
   background-color: rgb(24, 27, 31);
 `;

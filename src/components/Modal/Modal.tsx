@@ -1,9 +1,10 @@
 import * as React from "react";
 import * as S from "@/styles/modal/style";
+import styled from "styled-components";
 
 function Modal({ IsModalOpen, close }) {
   return (
-    <S.ModalContainer>
+    <S.ModalContainer IsModalOpen={IsModalOpen}>
       {IsModalOpen ? (
         <S.ModalBack onClick={close}>
           <S.ModalView>
