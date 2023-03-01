@@ -5,6 +5,7 @@ import Search from "./Search";
 import { TopFont } from "@/styles/index/style";
 import { useRecoilState } from "recoil";
 import { SelectedTokenState1, WhichSwapSate } from "@/src/atom";
+import TokenRecord from "./TokenRecord";
 
 function Modal({ IsModalOpen, close, AlertPreparing }) {
   const [swapIndex, setSwapIndex] = useRecoilState<number>(WhichSwapSate);
@@ -19,6 +20,7 @@ function Modal({ IsModalOpen, close, AlertPreparing }) {
           <S.ModalBack onClick={close}></S.ModalBack>
           <S.ModalView>
             <Search close={close} swapIndex={swapIndex} />
+            <TokenRecord swapIndex={swapIndex} close={close} />
             <S.Footer onClick={AlertPreparing}>토큰 목록 관리</S.Footer>
           </S.ModalView>
         </>

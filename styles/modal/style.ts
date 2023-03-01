@@ -50,16 +50,20 @@ export const ModalView = styled.div`
 
 export const Header = styled.div`
   width: 100%;
-  height: 30%;
+  height: 10%;
 
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  border-bottom: 2px solid rgb(47, 49, 56);
+`;
+
+export const Main = styled.div`
+  width: 100%;
+  height: 80%;
 `;
 
 export const Middle = styled.div`
   width: 100%;
-  height: 60%;
+  height: 72%;
 
   overflow-y: scroll;
 `;

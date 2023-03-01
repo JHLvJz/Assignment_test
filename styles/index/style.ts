@@ -30,6 +30,7 @@ export const Top = styled.div`
   .icon {
     position: absolute;
     right: 3%;
+    cursor: pointer;
   }
 `;
 
@@ -78,6 +79,8 @@ export const SwapButton = styled.div`
   text-align: center;
   position: relative;
   z-index: 5;
+
+  cursor: pointer;
 `;
 
 export const ArrowBox = styled.div`

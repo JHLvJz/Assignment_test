@@ -26,14 +26,22 @@ export const TopFont = styled.div<FontProps>`
 
 export const InputBox = styled.input`
   width: 90%;
-  height: 25%;
+  height: 10%;
   background-color: rgb(25, 27, 31);
   border: 1px solid rgb(58, 111, 220);
   border-radius: 10px;
   outline: none;
-  margin-top: 10%;
+
   padding: 1% 3% 1% 3%;
   color: rgb(180, 186, 206);
+`;
+
+export const RecordContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 15%;
+  border-bottom: 2px solid rgb(47, 49, 56);
 `;
 
 export const TokenItem = styled.div<TokenProps>`
