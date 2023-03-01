@@ -25,13 +25,12 @@ function Main() {
   const [IsModalOpen, SetModalOpen] = useState<boolean>(false);
   const [token1, setToken1] = useRecoilState<string>(SelectedTokenState1);
   const [token2, setToken2] = useRecoilState<string>(SelectedTokenState2);
-  // const [usd1, setUsd1] = useRecoilState(UsdState1);
-  // const [usd2, setUsd2] = useRecoilState(UsdState2);
   const [usd1, setUsd1] = useState<number>(0);
   const [usd2, setUsd2] = useState<number>(0);
   const [ongoingText, setOngoingText] = useRecoilState(ongoingTextState);
   const [swapIndex, SetSwapIndex] = useRecoilState(WhichSwapState);
 
+  //데이터 받아오기
   const dataFetch = async (tokenType) => {
     const { path, tokenKey } = getUsdInfo(tokenType);
     await axios
@@ -41,13 +40,14 @@ function Main() {
         let temp = data[tokenKey]["usd"];
         tokenType == token1 ? setUsd1(temp) : setUsd2(temp);
 
-        console.log(data[tokenKey]["usd"], "제~~~~~~~#####발");
+        // console.log(data[tokenKey]["usd"], "데이터확인");
       })
       .catch((err) => {
         console.log("에러", err);
       });
   };
 
+  //선택된 토큰에 따라 usd변경
   useEffect(() => {
     dataFetch(token1);
     dataFetch(token2);
@@ -59,8 +59,6 @@ function Main() {
     swapIndex == 1
       ? rateCalculate(ongoingText, usd1, usd2)
       : rateCalculate(ongoingText, usd2, usd1);
-
-  // console.log(result, "~~ㅠㅠㅠㅠㅠㅠ그만", usd1, usd2);
 
   const OpenModal = (idenfier: number) => {
     SetModalOpen(true);

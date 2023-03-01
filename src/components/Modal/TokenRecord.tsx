@@ -68,7 +68,7 @@ function TokenRecord({ swapIndex, close }) {
     // localStorage.setItem("keywords", JSON.stringify(keywords));
     const result = localStorage.getItem("keywords") || "[]";
     setKeywords(JSON.parse(result));
-    console.log("---난 [keywords]의존성이야---");
+    console.log("---[keywords]의존성---");
   }, [keywords]);
 
   const handleAddKeyword = (text: string) => {
@@ -80,7 +80,7 @@ function TokenRecord({ swapIndex, close }) {
     setKeywords([newKeyword, ...keywords]);
   };
 
-  /*-- 로컬스토리지 관리 --*/
+  /*-- 로컬스토리지 관리 여기까지 --*/
 
   return (
     <Main>

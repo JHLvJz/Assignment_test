@@ -1,5 +1,6 @@
 const { default: axios } = require("axios");
 
+//선택한 토큰에 대한 경로 전달
 const getUsdInfo = (tokenType) => {
   const APIList = {
     ETH: "ethereum",

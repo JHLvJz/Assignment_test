@@ -41,15 +41,13 @@ function ValueInput({ swapIndex, onChangeAmount, calculated }) {
 
   const onBlur = (e) => {
     SetisWriting(false);
-
-    console.log("꺼졌어");
   };
 
   useEffect(() => {
-    if (ongoingText.length > 0) {
-      SetIsInputBlank(false);
-    } else {
+    if (ongoingText == "0.0") {
       SetIsInputBlank(true);
+    } else {
+      SetIsInputBlank(false);
     }
   }, [ongoingText]);
 

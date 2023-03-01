@@ -13,3 +13,7 @@ export const rateCalculate = (raw, rawUsd, targetUsd) => {
   const result = (raw * rawUsd) / targetUsd;
   return result;
 };
+
+export const usdCalculate = (raw, rawUsd) => {
+  return raw * rawUsd;
+};
