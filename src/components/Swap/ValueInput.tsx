@@ -12,8 +12,9 @@ import { intControl, floatControl } from "@/utils";
 import getUsdInfo from "@/api";
 import axios from "axios";
 
-function ValueInput({ swapIndex, onChangeAmount, calculated }) {
-  const [ongoingText, setOngoingText] = useRecoilState(ongoingTextState);
+function ValueInput({ swapIndex, calculated }) {
+  const [ongoingText, setOngoingText] =
+    useRecoilState<string>(ongoingTextState);
   const [IsInputBlank, SetIsInputBlank] =
     useRecoilState<boolean>(IsInputBlankState);
   const [isWriting, SetisWriting] = useState<boolean>(false);
@@ -23,7 +24,7 @@ function ValueInput({ swapIndex, onChangeAmount, calculated }) {
   const onChange = (e) => {
     const { value } = e.target;
 
-    /*--입력값 필터링--*/
+    //입력값 형식에 맞게 필터링
     let FilteredInput = value.replace(/[^0-9, ^.]/g, "");
     if (FilteredInput.includes(".")) {
       const { periodIndex, numberAmount } = floatControl(value);
@@ -43,6 +44,7 @@ function ValueInput({ swapIndex, onChangeAmount, calculated }) {
     SetisWriting(false);
   };
 
+  //입력값 바뀔 때마다 업데이트
   useEffect(() => {
     if (ongoingText == "0.0") {
       SetIsInputBlank(true);
@@ -51,6 +53,7 @@ function ValueInput({ swapIndex, onChangeAmount, calculated }) {
     }
   }, [ongoingText]);
 
+  //활성화되어있는 입력창 구분
   if (isWriting == true) {
     return (
       <S.InputBox

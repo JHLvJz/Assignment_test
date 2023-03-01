@@ -53,8 +53,10 @@ function Main() {
     dataFetch(token2);
   }, [token1, token2]);
 
+  //버튼 활성화 여부 확인
   useEffect(() => {}, [IsInputBlank]);
 
+  //비율 계산
   let result =
     swapIndex == 1
       ? rateCalculate(ongoingText, usd1, usd2)

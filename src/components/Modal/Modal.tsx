@@ -9,7 +9,6 @@ import TokenRecord from "./TokenRecord";
 
 function Modal({ IsModalOpen, close, AlertPreparing }) {
   const [swapIndex, setSwapIndex] = useRecoilState<number>(WhichSwapState);
-  const [token1, setToken1] = useRecoilState<string>(SelectedTokenState1);
 
   return (
     <S.ModalContainer IsModalOpen={IsModalOpen}>

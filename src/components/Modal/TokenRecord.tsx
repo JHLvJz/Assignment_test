@@ -27,6 +27,7 @@ function TokenRecord({ swapIndex, close }) {
     "ENS",
   ];
 
+  //토큰 선택
   const tokenClick = (e: string) => {
     if (swapIndex == 1) {
       setToken1(e);
@@ -47,29 +48,29 @@ function TokenRecord({ swapIndex, close }) {
   });
 
   const [keywords, setKeywords] = useState<KeyInterface[]>([]);
-  console.log(keywords, "어디한번 보자~");
+  // console.log(keywords, "확인");
   const onChange = (e) => {
     const { value } = e.target;
     setText(value);
   };
 
-  //얜 계속 렌더링됨 (클릭할 때마다)
+  // 모달 창 클릭할 때마다 렌더링 (계속 초기화시켜버림)
   // useEffect(() => {
   //   const result = localStorage.getItem("keywords") || "[]";
-  //   console.log(result, "---난 []의존성이야---");
+  //   console.log(result, "---[]의존성---");
   //   setKeywords(JSON.parse(result));
   // }, []);
 
-  //얜 한 번 추가된 이후 다ㅅ ㅣ클릭했을 때
-  useEffect(() => {
-    if (keywords?.length === 0) {
-      return;
-    }
-    // localStorage.setItem("keywords", JSON.stringify(keywords));
-    const result = localStorage.getItem("keywords") || "[]";
-    setKeywords(JSON.parse(result));
-    console.log("---[keywords]의존성---");
-  }, [keywords]);
+  // 토큰 선택 이후 다시 추가했을 때 렌더링
+  // useEffect(() => {
+  //   if (keywords?.length === 0) {
+  //     return;
+  //   }
+  //   // localStorage.setItem("keywords", JSON.stringify(keywords));
+  //   const result = localStorage.getItem("keywords") || "[]";
+  //   setKeywords(JSON.parse(result));
+  //   console.log("---[keywords]의존성---");
+  // }, [keywords]);
 
   const handleAddKeyword = (text: string) => {
     const newKeyword = {
@@ -80,7 +81,7 @@ function TokenRecord({ swapIndex, close }) {
     setKeywords([newKeyword, ...keywords]);
   };
 
-  /*-- 로컬스토리지 관리 여기까지 --*/
+  /*-- 로컬스토리지 관리 끝지점 --*/
 
   return (
     <Main>

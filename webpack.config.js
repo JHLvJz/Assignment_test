@@ -1,7 +1,9 @@
 const path = require("path");
 
-const { CleanWebpackPlugin } = require("clean-webpack-plugin"); //추가
-const HtmlWebpackPlugin = require("html-webpack-plugin"); //추가
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+
+//환경변수관리
 const webpack = require("webpack");
 const dotenv = require("dotenv");
 
@@ -27,9 +29,8 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(), // 웹팩 실행시마다 dist 폴더 정리
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      //index.html 자동 생성되도록 template 옵션 설정
       template: "./src/index.html",
     }),
     new webpack.DefinePlugin({
