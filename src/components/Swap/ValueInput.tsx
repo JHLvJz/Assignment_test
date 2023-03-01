@@ -9,6 +9,7 @@ function ValueInput({ swapIndex, onChangeAmount }) {
   const [text, setText] = useState<string>("");
   const [IsInputBlank, SetIsInputBlank] =
     useRecoilState<boolean>(IsInputBlankState);
+  const [isWriting, SetisWriting] = useState<boolean>(false);
 
   const onChange = (e) => {
     const { value } = e.target;
@@ -29,6 +30,15 @@ function ValueInput({ swapIndex, onChangeAmount }) {
     const { value } = e.target;
   };
 
+  const onFocus = (e) => {
+    SetisWriting(true);
+  };
+
+  const onBlur = (e) => {
+    SetisWriting(false);
+    console.log("꺼졌어");
+  };
+
   useEffect(() => {
     if (text.length > 0) {
       SetIsInputBlank(false);
@@ -37,16 +47,29 @@ function ValueInput({ swapIndex, onChangeAmount }) {
     }
   }, [text]);
 
-  return (
-    <div>
+  if (isWriting == true) {
+    return (
       <S.InputBox
         onKeyUp={onKeyUp}
         onChange={onChange}
         value={text}
         placeholder="0.0"
+        onFocus={onFocus}
+        onBlur={onBlur}
       />
-    </div>
-  );
+    );
+  } else {
+    return (
+      <S.InputBox
+        onKeyUp={onKeyUp}
+        onChange={onChange}
+        value="지후"
+        placeholder="0.0"
+        onFocus={onFocus}
+        onBlur={onBlur}
+      />
+    );
+  }
 }
 
 export default ValueInput;
