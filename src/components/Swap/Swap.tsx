@@ -16,9 +16,13 @@ function Swap({ OpenModal, SwapIndex }) {
   const [token2, setToken2] = useRecoilState<string>(SelectedTokenState2);
   const [swapIndex, setSwapIndex] = useRecoilState<number>(WhichSwapSate);
 
+  const onChanegeAmount = (value) => {
+    console.log(value, " 잘하고있나..");
+  };
+
   return (
     <S.Container>
-      <ValueInput />
+      <ValueInput swapIndex={SwapIndex} onChangeAmount={onChanegeAmount} />
       <S.TokenButton
         onClick={() => {
           OpenModal();

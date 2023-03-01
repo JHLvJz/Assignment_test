@@ -8,8 +8,6 @@ import SearchItem from "./SearchItem";
 import TokenRecord from "./TokenRecord";
 
 function Search({ close, swapIndex }) {
-  //   console.log(`${process.env.Mesher_API_SERVER_URL}jihoo`);
-
   return (
     <Header>
       <S.Top>
