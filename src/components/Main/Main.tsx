@@ -20,40 +20,6 @@ function Main() {
   const [token1, setToken1] = useRecoilState<string>(SelectedTokenState1);
   const [token2, setToken2] = useRecoilState<string>(SelectedTokenState2);
 
-  const APIList = {
-    ETH: "ethereum",
-    USDT: "tether",
-    USDC: "usd-coin",
-    DAI: "dai",
-    AAVE: "aave",
-    WBTC: "bitcoin",
-    AXS: "axie-infinity",
-    COMP: "compound-coin",
-    CRV: "curve-dao-token",
-    ENS: "ethereum-name-service",
-  };
-
-  const dataFetch = async (whichToken) => {
-    await axios
-      .get(`${process.env.Mesher_API_SERVER_URL}${APIList[whichToken]}`)
-      .then(function (res) {
-        console.log(
-          `${process.env.Mesher_API_SERVER_URL}${APIList[whichToken]}`,
-          "~경로확인"
-        );
-        const { data } = res;
-        console.log(data[APIList[whichToken]]["usd"], "데이터");
-      })
-      .catch((err) => {
-        console.log("에러", err);
-      });
-  };
-
-  useEffect(() => {
-    dataFetch(token1);
-    dataFetch(token2);
-  }, [token1, token2]);
-
   const OpenModal = (idenfier: number) => {
     SetModalOpen(true);
   };
