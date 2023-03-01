@@ -8,13 +8,13 @@ import { useRecoilState } from "recoil";
 import {
   SelectedTokenState1,
   SelectedTokenState2,
-  WhichSwapSate,
+  WhichSwapState,
 } from "@/src/atom";
 
-function Swap({ OpenModal, SwapIndex }) {
+function Swap({ OpenModal, SwapIndex, calculated }) {
   const [token1, setToken1] = useRecoilState<string>(SelectedTokenState1);
   const [token2, setToken2] = useRecoilState<string>(SelectedTokenState2);
-  const [swapIndex, setSwapIndex] = useRecoilState<number>(WhichSwapSate);
+  const [swapIndex, setSwapIndex] = useRecoilState<number>(WhichSwapState);
 
   const onChanegeAmount = (value) => {
     console.log(value, " 잘하고있나..");
@@ -22,7 +22,11 @@ function Swap({ OpenModal, SwapIndex }) {
 
   return (
     <S.Container>
-      <ValueInput swapIndex={SwapIndex} onChangeAmount={onChanegeAmount} />
+      <ValueInput
+        swapIndex={SwapIndex}
+        onChangeAmount={onChanegeAmount}
+        calculated={calculated}
+      />
       <S.TokenButton
         onClick={() => {
           OpenModal();
